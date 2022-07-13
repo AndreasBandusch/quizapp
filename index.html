@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicons/favicon-32x32.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+        <meta name="msapplication-square310x310logo" content="img/favicons/mstile-310x310.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    <link href="styles/fonts.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/html-include.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/script.js"></script>
+    <title>The Awesome QuizApp</title>
+</head>
+
+<body onload="init(0, 0, true, false)">
+    <div class="container-sm quiz-container shadow">
+        <div class="row">
+            <div class="col-12 col-sm-3 navigation">
+                <div class="navi-top">
+                    <div class="logo">
+                        <h1><a href="#" onclick="init(0, 0, true, false)" title="The Awesome QuizApp"><img
+                                    src="img/logo.png"></a></h1>
+                    </div>
+                    <ul class="navbar-nav main-navi">
+                        <li class="nav-item">
+                            <a onclick="init(0, 0, false, false)" class="nav-link" href="#">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="init(1, 0, false, false)" class="nav-link" href="#">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="init(2, 0, false, false)" class="nav-link" href="#">JavaScript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="init(3, 0, false, false)" class="nav-link" href="#">Bootstrap</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav sub-navi">
+                    <li class="nav-item">
+                        <a onclick="showOverlay('impressum', false)" class="nav-link" href="#">Impressum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="showOverlay('datenschutz', false)" class="nav-link" href="#">Datenschutz</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-9 startscreen-content d-none" id="startscreen-content">
+                <h2>Welcome to<br>the Awesome&nbsp;<span id="category-start"></span>&nbsp;Quiz</h2>
+                <p>Ready for the Challenge?</p>
+                <button onclick="init(activeGame, 0, false, true)" class="btn btn-start startgame">START NOW
+                    &gt;&gt;</button>
+            </div>
+            <div class="col-12 col-sm-9 quiz-content d-none" id="quiz-content">
+                <h1 id="question">Hier kommt die Frage rein?</h1>
+                <button class="answer" id="answer-btn-1" onclick="checkAnswer(1)">
+                    <div class="answer-nb">A</div>
+                    <div id="answer-1">Antwort 1</div>
+                </button>
+                <button class="answer" id="answer-btn-2" onclick="checkAnswer(2)">
+                    <div class="answer-nb">B</div>
+                    <div id="answer-2">Antwort 1</div>
+                </button>
+                <button class="answer" id="answer-btn-3" onclick="checkAnswer(3)">
+                    <div class="answer-nb">C</div>
+                    <div id="answer-3">Antwort 1</div>
+                </button>
+                <button class="answer" id="answer-btn-4" onclick="checkAnswer(4)">
+                    <div class="answer-nb">D</div>
+                    <div id="answer-4">Antwort 1</div>
+                </button>
+                <div class="progress">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                        aria-valuemax="100">0 %</div>
+                </div>
+                <div class="footer">
+                    <div class="question-infos">Frage <span id="current-question"></span> von <span
+                            id="all-questions"></span></div>
+                    <button id="next-question" class="btn btn-next" onclick="nextQuestion()">Nächste Frage</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-9 endscreen-content d-none" id="endscreen-content">
+                <div class="logo-end">
+                    <img src="img/brain result.png">
+                </div>
+                <div class="complete-text">
+                    <div>COMPLETE</div>
+                    <div class="category"><span id="category-end">HTML</span>&nbsp;QUIZ</div>
+                    <div class="result">
+                        <div class="score-text">YOUR SCORE</div>
+                        <div class="score"><span id="right-answers">10</span>/<span>4</span></div>
+                    </div>
+                    <button onclick="notAvailable()" class="btn btn-primary btn-share">SHARE</button>
+                    <a onclick="init(activeGame, 0, false, false)" href="#" class="link-primary replay">REPLAY</a>
+                </div>
+                <img id="tropy" src="img/tropy.png" class="d-none">
+            </div>
+        </div>
+    </div>
+    <div w3-include-html="includes/impressum.html"></div>
+    <div w3-include-html="includes/datenschutz.html"></div>
+    <script>includeHTML();</script>
+</body>
+
+</html>

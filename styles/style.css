@@ -1,0 +1,402 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf9ee;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+.d-none {
+    display: none;
+    min-width: 500px;
+}
+
+.quiz-container {
+    background-color: #f6f6f6;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+    background-color: #273052;
+    color: white;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.logo {
+    margin-bottom: 32px;
+}
+
+.logo img {
+    height: 80px;
+
+}
+
+
+.main-navi .nav-item a {
+    border-left: 5px solid rgba(255, 255, 255, 0.0);
+    padding: 0 0 0 4px;
+    margin: 4px 0;
+}
+
+.main-navi .nav-item a:hover {
+    border-left: 5px solid white;
+}
+
+
+.sub-navi {
+    font-size: 0.8rem;
+}
+
+.sub-navi li {
+    margin-right: 16px;
+}
+
+.sub-navi a {
+    padding: 0;
+    padding-top: 4px;
+}
+
+.nav-link:hover {
+    color: #d1d1d1;
+}
+
+.quiz-content,
+.endscreen-content,
+.startscreen-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    padding: 16px;
+}
+
+.quiz-content h1,
+.endscreen-content h1,
+.startscreen-content h1,
+.impressum h1,
+.datenschutz h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.quiz-content {
+    font-weight: normal;
+}
+
+.startscreen-content {
+    font-family: 'PT Sans', sans-serif;
+    ;
+    background-image: url("../img/brainbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.startscreen-content h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.startgame {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 8px;
+    margin: 16px;
+
+    outline: none;
+    text-align: left;
+}
+
+.answer:hover:enabled {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.answer-nb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 35px;
+    min-width: 35px;
+    background-color: #d1d1d1;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.right-answer {
+    background-color: #bff197;
+    color: black;
+}
+
+.right-answer>.answer-nb {
+    background-color: #68b22f;
+    color: white;
+}
+
+.false-answer {
+    background-color: #ef9f9b;
+    color: black;
+}
+
+.false-answer>.answer-nb {
+    background-color: #df340b;
+    color: white;
+}
+
+.btn {
+    padding: 8px 16px;
+}
+
+.btn-next {
+    background-color: #273052;
+    color: white;
+    border: none;
+}
+
+.btn-next:disabled {
+    background-color: #d1d1d1;
+    color: black;
+    border: none;
+}
+
+.btn-next:hover {
+    background-color: #465076;
+    color: white;
+    border: none;
+}
+
+.btn-end,
+.btn-start {
+    background-color: #e35509;
+    color: white;
+    border: none;
+}
+
+.btn-end:disabled {
+    background-color: #d1d1d1;
+    color: black;
+    border: none;
+}
+
+.btn-end:hover,
+.btn-start:hover {
+    background-color: #db7944;
+    color: white;
+    border: none;
+}
+
+.logo-end {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.complete-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.logo-end img {
+    height: 120px;
+}
+
+#category-end,
+#category-start {
+    text-transform: uppercase;
+}
+
+.category {
+    display: flex;
+}
+
+.result {
+    display: flex;
+    margin-top: 16px;
+}
+
+.score-text {
+    margin-right: 32px;
+    color: #e0a164;
+}
+
+.btn-share {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding: 8px 32px;
+}
+
+.replay {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#current-question {
+    font-weight: bold;
+}
+
+.progress {
+    margin-top: 16px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 !important;
+}
+
+.progress-bar {
+    background-color: #273052;
+    border-radius: 0 !important;
+}
+
+#tropy {
+    position: absolute;
+    right: 0;
+    height: 200px;
+    top: calc(50% - 100px);
+}
+
+.impressum,
+.datenschutz {
+    padding: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    color: white;
+    background-color: #273052;
+    overflow: scroll;
+    padding: 16px;
+    word-wrap: break-word;
+}
+
+.impressum {
+    display: flex;
+    align-items: center;
+}
+
+.datenschutz a,
+.impressum a {
+    color: white;
+}
+
+.datenschutz h1,
+.impressum h1 {
+    color: white;
+    margin-top: 16px;
+}
+
+#close-window {
+    position: fixed;
+    top: 16px;
+    right: 32px;
+    height: 50px;
+    opacity: 0.3;
+}
+
+@media (min-width: 990px) {
+
+    .quiz-content,
+    .endscreen-content,
+    .startscreen-content {
+        justify-content: center;
+        padding: 16px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    body {
+        height: 100%;
+    }
+
+    .quiz-container {
+        box-shadow: none !important;
+    }
+
+    .navigation {
+        justify-content: center;
+        border-radius: 20px 20px 0 0;
+        padding: 16px;
+    }
+
+    .navi-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .sub-navi {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .sub-navi>li {
+        display: inline-block;
+        margin: 0 !important;
+
+    }
+
+    .main-navi>li>a {
+        padding: 0;
+        padding-bottom: 4px;
+    }
+
+    #tropy {
+        height: 150px;
+        top: calc(50% - 100px);
+    }
+
+    .startgame {
+        position: static;
+        margin-top: 32px;
+    }
+
+    #close-window {
+        right: 16px;
+    }
+}
